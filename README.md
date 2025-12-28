@@ -1,6 +1,6 @@
- #🏋️ FitnessApp (Expo + React Native)
+# 🏋️ FitnessApp (Expo + React Native)
 
-Aplicatie de fitness construita in React Native cu Expo. Include un UI modern (cards, spacing, iconite), navigatie Tab + Stack si functionalitati utile pentru laborator: BMI, cronometru, istoricul antrenamentelor, planuri alimentare si un Step Counter cu increment manual pentru demo.
+Aplicatie de fitness construita in React Native cu Expo. Include UI modern (cards, spacing, iconite), navigatie Tab + Stack si functionalitati utile pentru laborator: BMI, cronometru, istoricul antrenamentelor, planuri alimentare si un Step Counter cu increment manual pentru demo.
 
 ![Expo](https://img.shields.io/badge/Expo-SDK_54-000?style=for-the-badge&logo=expo&logoColor=fff)
 ![React Native](https://img.shields.io/badge/React_Native-0.81-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -11,11 +11,11 @@ Aplicatie de fitness construita in React Native cu Expo. Include un UI modern (c
 
 - **Home (Dashboard)**: acces rapid catre module
 - **BMI Calculator**: calcul + categorie
-- **Stopwatch**: start, pause, resethttps://github.com/CurcanRazvan/FitnessApp/blob/main/README.md
-- **Workout History**: adaugare/anulare sesiuni, salvare locala (AsyncStorage)
+- **Stopwatch**: start, pause, reset
+- **Workout History**: adaugare/stergere sesiuni, salvare locala (AsyncStorage)
 - **Step Counter**:
   - citire pasi (pedometer) daca telefonul suporta
-  - **buton de increment manual** pentru demo
+  - buton de increment manual (+1 / +10) pentru demo
 - **Planuri alimentare**: lista + ecrane dedicate, fiecare cu poza
 
 ---
@@ -55,45 +55,87 @@ FitnessApp/
 │  └─ PlanSPORT.js
 ├─ theme.js
 ├─ App.js
+├─ index.js
 ├─ app.json
 └─ package.json
 ```
-##🚀 Cum rulezi aplicatia 
-###1) Cerinte
-Node.js instalat (recomandat LTS)
 
-Expo Go pe telefon (Android/iOS)
+---
+
+## 🚀 Cum rulezi aplicatia
+
+### Cerinte
+- Node.js instalat (recomandat LTS)
+- Expo Go pe telefon (Android/iOS)
+- Telefonul si PC-ul pe aceeasi retea Wi-Fi (pentru conexiune LAN)
 
 Verifica Node:
-
-bash
-Copy code
+```bash
 node -v
-###2) Instalare
-Cloneaza si intra in folder:
+```
 
-bash
-Copy code
+### Instalare
+Cloneaza si intra in folder:
+```bash
 git clone https://github.com/<username>/<repo>.git
 cd <repo>
-Instaleaza dependintele:
-
-```bash
-Copy code
-npm install
-(Optional, recomandat pentru compatibilitate Expo):
 ```
+
+Instaleaza dependintele:
 ```bash
-Copy code
+npm install
+```
+
+Recomandat (compatibilitate pentru React Navigation in Expo):
+```bash
 npx expo install react-native-screens react-native-safe-area-context
 ```
-###3) Pornire
+
+### Pornire
+Start normal:
 ```bash
-Copy code
-npx expo start -c
+npx expo start
 ```
-Se afiseaza un QR in terminal
 
-Android: Expo Go -> Scan QR
+Daca ai probleme (cache / bundler):
+```bash
+npx expo start --clear
+```
 
-iOS: Camera -> Scan QR
+### Scan QR
+- Android: Expo Go -> Scan QR
+- iOS: Camera -> Scan QR
+
+### Daca nu merge conexiunea (LAN)
+Porneste in tunnel (mai lent, dar util in retele restrictive):
+```bash
+npx expo start --tunnel
+```
+
+---
+
+## 🛠️ Troubleshooting rapid
+
+### "package.json path ... does not exist"
+Ai rulat comanda dintr-un subfolder (ex: `screens/`). Intra in radacina proiectului si ruleaza iar:
+```bash
+cd ..
+npx expo start --clear
+```
+
+### "Project is incompatible with this version of Expo Go"
+Expo Go poate avea SDK diferit fata de proiect. Verifica proiectul si aliniaza dependintele:
+```bash
+npx expo-doctor
+npx expo install --fix
+```
+
+### "main has not been registered"
+De obicei e o eroare de import sau un fisier care crapa la load.
+- verifica importurile din `App.js` (nume fisier exact)
+- reporneste cu cache reset: `npx expo start --clear`
+
+---
+
+## 👤 Autor
+Made by Razvan Curcan
