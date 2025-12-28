@@ -11,7 +11,7 @@ Aplicatie de fitness construita in React Native cu Expo. Include un UI modern (c
 
 - **Home (Dashboard)**: acces rapid catre module
 - **BMI Calculator**: calcul + categorie
-- **Stopwatch**: start, pause, reset
+- **Stopwatch**: start, pause, resethttps://github.com/CurcanRazvan/FitnessApp/blob/main/README.md
 - **Workout History**: adaugare/anulare sesiuni, salvare locala (AsyncStorage)
 - **Step Counter**:
   - citire pasi (pedometer) daca telefonul suporta
@@ -58,8 +58,8 @@ FitnessApp/
 ├─ app.json
 └─ package.json
 ```
-🚀 Cum rulezi aplicatia 
-1) Cerinte
+##🚀 Cum rulezi aplicatia 
+###1) Cerinte
 Node.js instalat (recomandat LTS)
 
 Expo Go pe telefon (Android/iOS)
@@ -69,7 +69,7 @@ Verifica Node:
 bash
 Copy code
 node -v
-2) Instalare
+###2) Instalare
 Cloneaza si intra in folder:
 
 bash
@@ -78,18 +78,20 @@ git clone https://github.com/<username>/<repo>.git
 cd <repo>
 Instaleaza dependintele:
 
-bash
+```bash
 Copy code
 npm install
 (Optional, recomandat pentru compatibilitate Expo):
-
-bash
+```
+```bash
 Copy code
 npx expo install react-native-screens react-native-safe-area-context
-3) Pornire
-bash
+```
+###3) Pornire
+```bash
 Copy code
 npx expo start -c
+```
 Se afiseaza un QR in terminal
 
 Android: Expo Go -> Scan QR
