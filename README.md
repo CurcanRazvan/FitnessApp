@@ -57,7 +57,8 @@ FitnessApp/
 ├─ App.js
 ├─ app.json
 └─ package.json
-🚀 Cum rulezi aplicatia
+```
+🚀 Cum rulezi aplicatia 
 1) Cerinte
 Node.js instalat (recomandat LTS)
 
