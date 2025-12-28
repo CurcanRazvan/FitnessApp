@@ -106,36 +106,5 @@ npx expo start --clear
 - Android: Expo Go -> Scan QR
 - iOS: Camera -> Scan QR
 
-### Daca nu merge conexiunea (LAN)
-Porneste in tunnel (mai lent, dar util in retele restrictive):
-```bash
-npx expo start --tunnel
-```
-
----
-
-## 🛠️ Troubleshooting rapid
-
-### "package.json path ... does not exist"
-Ai rulat comanda dintr-un subfolder (ex: `screens/`). Intra in radacina proiectului si ruleaza iar:
-```bash
-cd ..
-npx expo start --clear
-```
-
-### "Project is incompatible with this version of Expo Go"
-Expo Go poate avea SDK diferit fata de proiect. Verifica proiectul si aliniaza dependintele:
-```bash
-npx expo-doctor
-npx expo install --fix
-```
-
-### "main has not been registered"
-De obicei e o eroare de import sau un fisier care crapa la load.
-- verifica importurile din `App.js` (nume fisier exact)
-- reporneste cu cache reset: `npx expo start --clear`
-
----
-
 ## 👤 Autor
 Made by Razvan Curcan
